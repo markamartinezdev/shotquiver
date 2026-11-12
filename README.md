@@ -28,9 +28,11 @@ Use the production preview to test offline support; the service worker is intent
 
 Repository: https://github.com/markamartinezdev/shotquiver
 
-The app is configured for https://markamartinezdev.github.io/shotquiver/. In repository **Settings → Pages**, set **Source** to **GitHub Actions**. Each push to `main` runs type checks, tests, and a production build before deploying. The workflow can also be run manually from the Actions tab.
+The app is configured for https://shotquiver.com/. In repository **Settings → Pages**, set **Source** to **GitHub Actions** and **Custom domain** to `shotquiver.com`. Domain verification alone does not connect the website. Each push to `main` runs type checks, tests, and a production build before deploying. The workflow can also be run manually from the Actions tab.
 
-Both local development and production preview use `/shotquiver/`. The service worker, offline navigation fallback, icons, and assets use this repository path. If you later move to a custom domain, update Vite's `base` and the service worker's `navigateFallback` together.
+Local development and production use the root path `/`. The service worker, offline navigation fallback, icons, and assets use this root path. To return to the default GitHub project URL, change Vite's `base` to `/shotquiver/` and the service worker's `navigateFallback` to `/shotquiver/index.html`.
+
+At Namecheap, replace the default parking/redirect records for `@` and `www`. Create four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Set the `www` CNAME to `markamartinezdev.github.io`. Keep the GitHub verification TXT record. Once DNS and GitHub's certificate are ready, enable **Enforce HTTPS** in Pages settings.
 
 Scores are stored in each browser, not on GitHub. To move scores from localhost to the hosted site, export JSON on localhost and import it on the hosted site.
 

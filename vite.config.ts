@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/shotquiver/',
+  base: '/',
   plugins: [
     svelte(),
     VitePWA({
@@ -33,7 +33,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        navigateFallback: '/shotquiver/index.html',
+        navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
       },
     }),
