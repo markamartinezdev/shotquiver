@@ -1,0 +1,111 @@
+.station-details {
+  margin-top: 16px;
+}
+.face-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: -4px 0 20px;
+  padding: 12px 16px;
+  background: #fcfdf9;
+  border: 1px solid #e6e9e1;
+  border-radius: 8px;
+}
+.face-selector label {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #748368;
+}
+.face-selector select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px;
+  border: 1px solid #dce4d2;
+  border-radius: 5px;
+  background: white;
+  color: #324b2b;
+}
+.face-selector p {
+  font-size: 10px;
+  margin: 0;
+  flex: 1 1 200px;
+}
+.station-row {
+  display: block;
+  font-size: 9px;
+  line-height: 1.5;
+  font-weight: 400;
+  white-space: normal;
+  color: #6c7e5e;
+  padding: 0 6px 8px 0;
+}
+.station-details label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  color: #536a43;
+}
+.station-details select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #dce4d2;
+  border-radius: 6px;
+  background: #fafcf6;
+  color: #324b2b;
+}
+.station-details p {
+  font-size: 11px;
+  margin: 8px 0;
+}
+.builder-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.builder-fields label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  color: #506743;
+  min-width: 0;
+}
+.builder-fields input,
+.builder-fields select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #d8e2cb;
+  border-radius: 6px;
+  background: #fff;
+  color: #283e2b;
+  font-size: 16px;
+}
+.builder-fields .wide {
+  grid-column: 1/-1;
+}
+.builder-fields .checkbox-label {
+  display: flex;
+  align-items: center;
+}
+.builder-fields input[type='checkbox'] {
+  width: 20px;
+  min-height: 20px;
+  accent-color: #274c39;
+}
+.builder-modal .primary {
+  width: 100%;
+}
+.round-selector select {
+  max-width: min(360px, 60vw);
+}
+@media (max-width: 740px) {
+  .round-selector select {
+    font-size: 12px;
+    max-width: calc(100vw - 145px);
+  }
+  .station-details select {
+    font-size: 16px;
+  }
+}

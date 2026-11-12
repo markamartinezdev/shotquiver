@@ -1,0 +1,269 @@
+/* Follow the device live, without a stored override. Target SVG colors and
+   scoring-zone swatches deliberately retain their official face colors. */
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --green: #b9e6d0;
+    --lime: #b9e6d0;
+    --muted: #a9bdb8;
+    --line: #354b4c;
+    --surface: #192c30;
+    --surface-raised: #223b3e;
+    --selected: #2a4845;
+    --text: #edf4f2;
+    color: var(--text);
+    background: #101c20;
+  }
+
+  .sidebar,
+  .topbar,
+  .round-bar,
+  .face-selector,
+  .panel,
+  .stat-card,
+  .target-panel,
+  .rules-modal {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--line);
+  }
+
+  .brand {
+    color: #ffffff;
+  }
+  .brand-copy > span {
+    color: #aecbc6;
+  }
+
+  /* Supporting text, icons, and labels share a readable muted tone. */
+  .nav-caption,
+  nav button,
+  .sidebar-link,
+  .sidebar-footer,
+  .breadcrumbs,
+  .breadcrumbs span,
+  .save-status,
+  .eyebrow,
+  .page-heading p,
+  .icon-button,
+  .round-selector label,
+  .round-details,
+  .stat-label,
+  .stat-label svg,
+  .stat-denominator,
+  .stat-unit,
+  .stat-foot,
+  .total-stat .stat-denominator,
+  .panel-heading h2 span,
+  .mode-toggle button,
+  .arrow-slot > span,
+  .arrow-slot strong,
+  .entry-instruction,
+  .entry-instruction button,
+  .muted,
+  .score-button span,
+  .score-miss strong,
+  .end-summary,
+  .end-summary small,
+  .end-xs,
+  .round-details,
+  .history-actions,
+  .entry-hint,
+  .target-badge,
+  .target-caption,
+  .target-help,
+  .target-legend,
+  .line-rule,
+  .edit-tools,
+  thead th,
+  tbody td,
+  tbody th > button,
+  .empty-cell,
+  .running-total,
+  tfoot th,
+  tfoot small,
+  .scorecard-footer,
+  .scorecard-footer button,
+  .notes-heading,
+  .notes-heading p,
+  .page-footer,
+  .page-footer button,
+  .history-toolbar,
+  .history-description .history-note,
+  .history-score small,
+  .history-actions .icon-button,
+  .backup-note,
+  .face-selector label,
+  .station-row,
+  .station-details label,
+  .builder-fields label,
+  .local-card p {
+    color: var(--muted);
+  }
+
+  .breadcrumbs strong,
+  .stat-card strong,
+  .arrow-slot.filled strong,
+  .end-summary strong,
+  .cell-total,
+  tfoot td,
+  .notes-heading h2,
+  .local-card strong {
+    color: var(--text);
+  }
+
+  input,
+  select,
+  textarea,
+  .round-selector select,
+  .face-selector select,
+  .station-details select,
+  .builder-fields input,
+  .builder-fields select,
+  .target-legend input {
+    background: #122226;
+    color: var(--text);
+    border-color: var(--line);
+    accent-color: #b9e6d0;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    color: #9fb4ae;
+  }
+  option {
+    background: #122226;
+    color: var(--text);
+  }
+
+  .secondary,
+  .arrow-slot,
+  .score-button,
+  .score-miss,
+  .compact-scores button,
+  .nudge-buttons button {
+    background: var(--surface-raised);
+    border-color: var(--line);
+    color: var(--text);
+  }
+  .mode-toggle,
+  .end-summary,
+  .placement-guide,
+  thead,
+  tfoot,
+  .history-icon,
+  .pill,
+  .local-card,
+  .notice {
+    background: var(--surface-raised);
+    border-color: var(--line);
+  }
+  .local-card,
+  .history-icon,
+  .pill,
+  .placement-icon,
+  .history-score > span,
+  .progress-stat .stat-label > span,
+  .rules-source,
+  .table-check {
+    color: #b9e6d0;
+  }
+
+  nav button.active,
+  nav button:hover,
+  .mode-toggle button.chosen,
+  .total-stat,
+  .arrow-slot.filled,
+  .arrow-slot.x-score,
+  .score-five,
+  tbody tr.current-row,
+  .x-chip,
+  .complete-pill {
+    background: var(--selected);
+    border-color: #5b8b7f;
+    color: #d7f3e5;
+  }
+  .total-stat strong,
+  .arrow-slot.x-score strong,
+  .current-row th > button {
+    color: #d7f3e5;
+  }
+  .arrow-slot.next,
+  .arrow-slot.selected {
+    border-color: #b9e6d0;
+    box-shadow: 0 0 0 2px #395e53;
+  }
+  .primary,
+  .score-x {
+    background: #b9e6d0;
+    border-color: #b9e6d0;
+    color: #172e34;
+  }
+  .score-x span {
+    color: #294f42;
+  }
+  .primary:hover:not(:disabled),
+  .score-x:hover:not(:disabled) {
+    background: #d1f1e2;
+    border-color: #d1f1e2;
+  }
+  .secondary:hover:not(:disabled),
+  .icon-button:hover,
+  .score-button:not(.score-x):hover:not(:disabled) {
+    background: #355552;
+    border-color: #7fae9e;
+  }
+  .progress-track {
+    background: #354b4c;
+  }
+  .progress-track span,
+  .status-dot,
+  .tiny-line {
+    background: #a1d7b8;
+  }
+  .status-dot.error {
+    background: #f1a390;
+  }
+  .status-dot.offline {
+    background: #e3c17a;
+  }
+
+  .end-xs,
+  .target-legend,
+  .target-badge,
+  tbody tr,
+  .game-start,
+  .scorecard-footer,
+  .page-footer,
+  .rules-rings {
+    border-color: var(--line);
+  }
+  .text-danger {
+    color: #f1af9d;
+  }
+  .error-notice {
+    background: #402c29;
+    border-color: #9d6a58;
+    color: #ffd2be;
+  }
+  .toast {
+    background: #294b44;
+    color: #edf4f2;
+  }
+  .toast > svg,
+  .toast button {
+    color: #b9e6d0;
+  }
+  .rules-modal::backdrop {
+    background: #061013b3;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  select:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline-color: #b9e6d0;
+  }
+}
