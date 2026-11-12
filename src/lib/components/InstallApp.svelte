@@ -78,10 +78,11 @@
   <h2 id="install-title">Install ShotQuiver</h2>
   {#if ios}
     <ol>
-      <li>Open ShotQuiver in <strong>Safari</strong>.</li>
+      <li>Open ShotQuiver in <strong>Chrome or Safari</strong>.</li>
       <li>
-        Tap <strong>Share</strong> (the square with an upward arrow). It may be
-        under the <strong>More</strong> menu.
+        Tap <strong>Share</strong> (the square with an upward arrow). In Chrome,
+        look beside the address bar. In Safari, it may be under the
+        <strong>More</strong> menu.
       </li>
       <li>Choose <strong>Add to Home Screen</strong>.</li>
       <li>
@@ -90,8 +91,8 @@
       </li>
     </ol>
     <p>
-      If Add to Home Screen is missing, choose Edit Actions in the Share menu to
-      add it.
+      If Add to Home Screen is missing, update iOS and your browser, then check
+      the Share menu again. In Safari, you can also check Edit Actions.
     </p>
   {:else if android}
     <ol>
