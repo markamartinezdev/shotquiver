@@ -4,6 +4,7 @@
   import Icon from './lib/components/Icon.svelte'
   import Target from './lib/components/Target.svelte'
   import CustomBuilder from './lib/components/CustomBuilder.svelte'
+  import InstallApp from './lib/components/InstallApp.svelte'
   import {
     indoor300,
     rounds,
@@ -55,6 +56,7 @@
   let rulesOpen = $state(false)
   let rulesDialog: HTMLDialogElement
   let installPrompt = $state.raw<InstallPrompt | null>(null)
+  let appInstalled = $state(false)
   let importBusy = $state(false)
   let fileInput: HTMLInputElement
   let queue = Promise.resolve()
@@ -382,6 +384,16 @@
 
   onMount(() => {
     void initialize()
+    const appDisplay = window.matchMedia(
+      '(display-mode: standalone), (display-mode: fullscreen), (display-mode: minimal-ui)'
+    )
+    const updateDisplay = () => {
+      appInstalled =
+        appDisplay.matches ||
+        (navigator as Navigator & { standalone?: boolean }).standalone === true
+    }
+    updateDisplay()
+    appDisplay.addEventListener('change', updateDisplay)
     const goOnline = () => {
       online = true
     }
@@ -394,6 +406,7 @@
     }
     const installed = () => {
       installPrompt = null
+      appInstalled = true
     }
     const protectPendingSave = (event: BeforeUnloadEvent) => {
       if (pending || storageError) {
@@ -427,6 +440,7 @@
       window.removeEventListener('offline', goOffline)
       window.removeEventListener('beforeinstallprompt', install)
       window.removeEventListener('appinstalled', installed)
+      appDisplay.removeEventListener('change', updateDisplay)
     }
   })
 </script>
@@ -562,6 +576,8 @@
             ><Icon name="plus" size={18} /> New session</button
           >
         </div>
+
+        <InstallApp bind:prompt={installPrompt} installed={appInstalled} />
 
         {#if page !== 'history'}
           <div class="round-bar">
@@ -1148,14 +1164,7 @@
                 : 'Offline · scores save locally'}</span
           >
           <div>
-            {#if installPrompt}<button
-                onclick={async () => {
-                  await installPrompt?.prompt()
-                  installPrompt = null
-                }}>Install app</button
-              >{:else}<span class="install-tip"
-                >Install from your browser’s menu</span
-              >{/if}<button onclick={() => (rulesOpen = true)}
+            <button onclick={() => (rulesOpen = true)}
               >Scoring guide <Icon name="info" size={14} /></button
             >
           </div>
